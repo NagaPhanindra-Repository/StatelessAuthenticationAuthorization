@@ -13,18 +13,17 @@ import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.mastercard.cardholder.model.cardHolder;
-import com.mastercard.cardholder.model.cardHolderDetails;
-import com.mastercard.cardholder.model.cardUserTransactions;
-import com.mastercard.cardholder.repository.cardHolderDetailsRepository;
-import com.mastercard.cardholder.repository.cardHolderRepository;
-import com.mastercard.cardholder.repository.cardUserTransactionsRepository;
+import com.codemer.authserver.model.cardHolder;
+import com.codemer.authserver.model.cardHolderDetails;
+import com.codemer.authserver.model.cardUserTransactions;
+import com.codemer.authserver.repository.cardHolderDetailsRepository;
+import com.codemer.authserver.repository.cardHolderRepository;
+import com.codemer.authserver.repository.cardUserTransactionsRepository;
 
 
 import org.springframework.boot.SpringApplication;
@@ -43,10 +42,10 @@ public class StatelessAuthenticationAuthorizationApplication {
 	    @PostConstruct
 	    public void initUsers() {
 	        List<cardHolder> cardholders = Stream.of(
-	                new cardHolder(101, "user1", "password", "test1@mastercard.com"),
-	                new cardHolder(102, "padma", "password", "e091308@mastercard.com"),
-	                new cardHolder(103, "user2", "pwd2", "test2@mastercard.com"),
-	                new cardHolder(104, "user3", "pwd3", "test3@mastercard.com")
+	                new cardHolder(101, "naga1", "password", "test1@codemer.com"),
+	                new cardHolder(102, "naga2", "password", "naga@codemer.com"),
+	                new cardHolder(103, "phani", "pwd2", "test2@codemer.com"),
+	                new cardHolder(104, "chowdary", "pwd3", "test3@codemer.com")
 	        ).collect(Collectors.toList());
 	        repository.saveAll(cardholders);
 	        
