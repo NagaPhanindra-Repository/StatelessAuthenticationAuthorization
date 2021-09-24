@@ -16,7 +16,7 @@ import com.codemer.authserver.model.requestModel;
 import com.codemer.authserver.repository.cardHolderDetailsRepository;
 import com.codemer.authserver.util.JWTUtil;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 public class authenticationController {
 	

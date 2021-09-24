@@ -16,7 +16,7 @@ import com.codemer.authserver.model.cardUserTransactions;
 import com.codemer.authserver.repository.cardHolderDetailsRepository;
 import com.codemer.authserver.repository.cardUserTransactionsRepository;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/authenticate/")
 public class cardUserTransactionsController {
