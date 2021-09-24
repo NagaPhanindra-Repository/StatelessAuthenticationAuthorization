@@ -14,8 +14,8 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.mastercard.cardholder.filter.JWTFilter;
-import com.mastercard.cardholder.service.customUserDetailsService;
+import com.codemer.authserver.filter.JWTFilter;
+import com.codemer.authserver.service.customUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

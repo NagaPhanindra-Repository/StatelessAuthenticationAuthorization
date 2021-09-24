@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mastercard.cardholder.model.cardHolder;
-import com.mastercard.cardholder.model.cardHolderDetails;
-import com.mastercard.cardholder.model.requestModel;
-import com.mastercard.cardholder.repository.cardHolderDetailsRepository;
-import com.mastercard.cardholder.util.JWTUtil;
+import com.codemer.authserver.model.cardHolder;
+import com.codemer.authserver.model.cardHolderDetails;
+import com.codemer.authserver.model.requestModel;
+import com.codemer.authserver.repository.cardHolderDetailsRepository;
+import com.codemer.authserver.util.JWTUtil;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController

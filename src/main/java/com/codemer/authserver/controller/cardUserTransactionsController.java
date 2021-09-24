@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mastercard.cardholder.model.cardUserTransactions;
-import com.mastercard.cardholder.repository.cardHolderDetailsRepository;
-import com.mastercard.cardholder.repository.cardUserTransactionsRepository;
+import com.codemer.authserver.model.cardUserTransactions;
+import com.codemer.authserver.repository.cardHolderDetailsRepository;
+import com.codemer.authserver.repository.cardUserTransactionsRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController

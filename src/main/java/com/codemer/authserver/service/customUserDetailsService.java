@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.mastercard.cardholder.model.cardHolder;
-import com.mastercard.cardholder.repository.cardHolderRepository;
+import com.codemer.authserver.model.cardHolder;
+import com.codemer.authserver.repository.cardHolderRepository;
 
 @Service
 public class customUserDetailsService implements UserDetailsService{

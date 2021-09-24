@@ -15,8 +15,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.mastercard.cardholder.service.customUserDetailsService;
-import com.mastercard.cardholder.util.JWTUtil;
+import com.codemer.authserver.service.customUserDetailsService;
+import com.codemer.authserver.util.JWTUtil;
 
 @Component
 public class JWTFilter extends OncePerRequestFilter{
