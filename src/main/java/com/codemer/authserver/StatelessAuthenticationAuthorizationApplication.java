@@ -1,9 +1,11 @@
 package com.codemer.authserver;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -18,6 +20,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.codemer.authserver.model.Role;
 import com.codemer.authserver.model.cardHolder;
 import com.codemer.authserver.model.cardHolderDetails;
 import com.codemer.authserver.model.cardUserTransactions;
@@ -39,13 +42,15 @@ public class StatelessAuthenticationAuthorizationApplication {
 	 @Autowired
 	 private cardUserTransactionsRepository cardUserTransactionsrepository;
 
+	    Set<Role> rolesList=Stream.of(new Role(101,"ADMIN"),new Role(102,"USER")).collect(Collectors.toSet());
+	   
 	    @PostConstruct
 	    public void initUsers() {
 	        List<cardHolder> cardholders = Stream.of(
-	                new cardHolder(101, "naga1", "password", "test1@codemer.com"),
-	                new cardHolder(102, "naga2", "password", "naga@codemer.com"),
-	                new cardHolder(103, "phani", "pwd2", "test2@codemer.com"),
-	                new cardHolder(104, "chowdary", "pwd3", "test3@codemer.com")
+	                new cardHolder(101, "naga1", "password", "test1@codemer.com",rolesList),
+	                new cardHolder(102, "naga2", "password", "naga@codemer.com",rolesList),
+	                new cardHolder(103, "phani", "pwd2", "test2@codemer.com",rolesList),
+	                new cardHolder(104, "chowdary", "pwd3", "test3@codemer.com",rolesList)
 	        ).collect(Collectors.toList());
 	        repository.saveAll(cardholders);
 	        

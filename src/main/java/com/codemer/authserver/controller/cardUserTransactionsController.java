@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ public class cardUserTransactionsController {
 	private cardUserTransactionsRepository cardholderdetailsrepository;
 	
 	
-	 @GetMapping("/LastTenTransactions")		   
+	 @GetMapping("/LastTenTransactions")
 	    public List<cardUserTransactions> getLastTenTransactions() {
 	    	
 	    	
@@ -37,14 +38,27 @@ public class cardUserTransactionsController {
 			return myLast50Transactions;
 	    }
 	    
-	    @GetMapping("/transactions")		   
+	    @GetMapping("/transactions")
 	    public List<cardUserTransactions> getAllTransactions() {
 	    	
 	    	
 	    	return cardholderdetailsrepository.findAll();
 	    }
 	    
-	    @GetMapping("/CurrentTransactions")		   
+	    @GetMapping("/UserAuthoritytest")
+	    public List<cardUserTransactions> getAllTransactionsUserTest() {
+	    	
+	    	serviceTestTwo();
+	    	return cardholderdetailsrepository.findAll();
+	    }
+	    @GetMapping("/AdminAuthoritytest")
+	    public List<cardUserTransactions> getAllTransactionsAdminTest() {
+	    	
+	    	serviceTest();
+	    	return cardholderdetailsrepository.findAll();
+	    }
+	    
+	    @GetMapping("/CurrentTransactions")	
 	    public List<cardUserTransactions> getCurrentTransactions() {
 	    	
 	    	
@@ -61,7 +75,16 @@ public class cardUserTransactionsController {
 	    }
 
 
-	
+	    @PreAuthorize("hasRole('ADMIN')")
+	    public void serviceTest() {
+	    	System.out.println("Inside the authority test of: ADMIN");
+	    }
+	    
+	    @PreAuthorize("hasRole('USER')")
+	    public void serviceTestTwo() {
+	    	System.out.println("Inside the authority test of: USER");
+	    }
+	    
 		
 	        
 	
